@@ -1,0 +1,22 @@
+#pythonproject-02
+import random
+score = 0
+while True:
+    print("welcome to the guessing game ")
+    user_input = int(input("ENTER A NUMBER: "))
+    if user_input <= 0:
+        print("Enter a number greater than 0")
+    else:
+        computer_choice = random.randint(1, 10)
+        print("AUM-AI: " + str(computer_choice))
+        if user_input == computer_choice:
+            
+            print("You guessed it right!")
+            score+=1
+            
+            play_again = input("Do you want to play again? (yes/no): ")
+            if play_again.lower() != "yes":
+                break
+        elif user_input > computer_choice:
+            print("Guess lower")
+            score -= 1
